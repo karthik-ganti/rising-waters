@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Flood Risk Detected — Rising Waters{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6 text-center">
+        <div class="rw-result-card rw-flood p-5 shadow">
+            <div class="rw-result-icon mb-4">
+                <i class="bi bi-exclamation-triangle-fill"></i>
+            </div>
+            <h2 class="fw-bold mb-2">Flood Risk Detected</h2>
+            <p class="lead mb-4 opacity-90">
+                The model predicts a <strong>HIGH probability</strong> of flooding for the entered parameters.
+            </p>
+
+            <div class="rw-prob-badge mb-4">
+                <span class="rw-prob-number">{{ probability }}</span>
+                <span class="rw-prob-label">% Flood Probability</span>
+            </div>
+
+            <div class="alert alert-light text-start mb-4">
+                <strong><i class="bi bi-megaphone me-2"></i>Recommended Actions:</strong>
+                <ul class="mt-2 mb-0 small">
+                    <li>Issue flood alerts for the affected district.</li>
+                    <li>Activate evacuation plans for low-lying areas.</li>
+                    <li>Deploy emergency response teams and equipment.</li>
+                    <li>Coordinate with local authorities for shelter arrangements.</li>
+                </ul>
+            </div>
+
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="{{ url_for('predict_form') }}" class="btn btn-light btn-lg px-4 fw-semibold">
+                    <i class="bi bi-arrow-left me-2"></i>New Prediction
+                </a>
+                <a href="{{ url_for('history') }}" class="btn btn-outline-light btn-lg px-4">
+                    <i class="bi bi-clock-history me-2"></i>View History
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

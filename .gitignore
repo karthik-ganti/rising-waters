@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env
+venv/
+env/
+
+# Database (will be recreated on startup)
+*.db
+*.sqlite3
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Dataset (too large / not needed for serving)
+dataset/
+
+# OS
+.DS_Store
+Thumbs.db

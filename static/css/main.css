@@ -1,0 +1,279 @@
+/* ─── Base ─────────────────────────────────────────────── */
+:root {
+    --rw-primary:   #1a3a6b;
+    --rw-secondary: #2563eb;
+    --rw-flood:     #dc2626;
+    --rw-safe:      #16a34a;
+    --rw-accent:    #0ea5e9;
+}
+
+body {
+    background-color: #f5f7fb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+}
+
+/* ─── Navbar ────────────────────────────────────────────── */
+.rw-navbar {
+    background: linear-gradient(135deg, var(--rw-primary) 0%, #1e4db7 100%);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    padding: 0.75rem 0;
+}
+
+.rw-navbar .navbar-brand {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+}
+
+.rw-navbar .nav-link {
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.rw-navbar .nav-link:hover {
+    color: var(--rw-accent) !important;
+}
+
+/* ─── Hero ──────────────────────────────────────────────── */
+.rw-hero {
+    background: linear-gradient(135deg, var(--rw-primary) 0%, #1d4ed8 50%, #0369a1 100%);
+    border-radius: 0 0 2rem 2rem;
+    padding: 5rem 1rem !important;
+    margin-top: -1rem;
+}
+
+.rw-hero .btn-light {
+    color: var(--rw-primary);
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.rw-hero .btn-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2) !important;
+}
+
+/* ─── Stats ─────────────────────────────────────────────── */
+.rw-stat-card {
+    background: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: transform 0.2s;
+}
+
+.rw-stat-card:hover {
+    transform: translateY(-4px);
+}
+
+.rw-stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--rw-secondary);
+    line-height: 1;
+}
+
+.rw-stat-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-top: 0.4rem;
+    font-weight: 500;
+}
+
+/* ─── Steps ─────────────────────────────────────────────── */
+.rw-step-circle {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--rw-secondary);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+}
+
+/* ─── Scenario Cards ────────────────────────────────────── */
+.rw-scenario-card {
+    border-radius: 1rem !important;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.rw-scenario-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+}
+
+.rw-icon-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ─── CTA Section ───────────────────────────────────────── */
+.rw-cta-section {
+    background: linear-gradient(135deg, #0f172a 0%, var(--rw-primary) 100%);
+    border-radius: 1.5rem;
+}
+
+/* ─── Auth Cards ────────────────────────────────────────── */
+.rw-auth-card {
+    border-radius: 1.25rem !important;
+    margin-top: 1rem;
+}
+
+.rw-auth-card .input-group-text {
+    background-color: #f1f5f9;
+    border-color: #e2e8f0;
+    color: #64748b;
+}
+
+.rw-auth-card .form-control,
+.rw-auth-card .form-select {
+    border-color: #e2e8f0;
+}
+
+.rw-auth-card .form-control:focus,
+.rw-auth-card .form-select:focus {
+    border-color: var(--rw-secondary);
+    box-shadow: 0 0 0 0.2rem rgba(37,99,235,0.15);
+}
+
+/* ─── Prediction Form ───────────────────────────────────── */
+.rw-form-header {
+    background: linear-gradient(135deg, var(--rw-primary) 0%, #1d4ed8 100%);
+    border-radius: 0.75rem 0.75rem 0 0 !important;
+}
+
+.rw-input {
+    border-color: #e2e8f0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.rw-input:focus {
+    border-color: var(--rw-secondary);
+    box-shadow: 0 0 0 0.2rem rgba(37,99,235,0.15);
+}
+
+.rw-input.is-invalid {
+    border-color: var(--rw-flood);
+}
+
+/* ─── Result Pages ──────────────────────────────────────── */
+.rw-result-card {
+    border-radius: 1.5rem;
+    color: #ffffff;
+}
+
+.rw-flood {
+    background: linear-gradient(135deg, #991b1b 0%, var(--rw-flood) 100%);
+}
+
+.rw-safe {
+    background: linear-gradient(135deg, #14532d 0%, var(--rw-safe) 100%);
+}
+
+.rw-result-icon {
+    font-size: 5rem;
+    opacity: 0.95;
+}
+
+.rw-prob-badge {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255,255,255,0.2);
+    border-radius: 1rem;
+    padding: 1rem 2.5rem;
+    backdrop-filter: blur(4px);
+}
+
+.rw-prob-number {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.rw-prob-label {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: 0.25rem;
+}
+
+.rw-result-card .btn-light {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+.rw-result-card .btn-light:hover {
+    transform: translateY(-1px);
+}
+
+.rw-result-card .alert {
+    border: none;
+    border-radius: 0.75rem;
+    background: rgba(255,255,255,0.92);
+    color: #1e293b;
+}
+
+/* ─── History Table ─────────────────────────────────────── */
+.rw-table-header th {
+    background-color: var(--rw-primary);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.3px;
+    border: none;
+    padding: 0.85rem 1rem;
+}
+
+.rw-table-header th:first-child {
+    border-radius: 0.5rem 0 0 0;
+}
+
+.rw-table-header th:last-child {
+    border-radius: 0 0.5rem 0 0;
+}
+
+table.table tbody tr:hover {
+    background-color: #f0f7ff;
+}
+
+.rw-badge-flood {
+    background-color: #fee2e2;
+    color: var(--rw-flood);
+    font-size: 0.8rem;
+    padding: 0.35em 0.65em;
+}
+
+.rw-badge-safe {
+    background-color: #dcfce7;
+    color: var(--rw-safe);
+    font-size: 0.8rem;
+    padding: 0.35em 0.65em;
+}
+
+/* ─── Footer ────────────────────────────────────────────── */
+.rw-footer {
+    background: #f1f5f9;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* ─── Utility ───────────────────────────────────────────── */
+.card {
+    border-radius: 1rem !important;
+}
+
+.btn-primary {
+    background-color: var(--rw-secondary);
+    border-color: var(--rw-secondary);
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}

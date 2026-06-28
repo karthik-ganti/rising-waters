@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block title %}Rising Waters — Flood Prediction System{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="rw-hero text-white text-center py-5 mb-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <i class="bi bi-water display-1 mb-3 d-block"></i>
+                <h1 class="display-4 fw-bold mb-3">Rising Waters</h1>
+                <p class="lead mb-4">
+                    A Machine Learning Approach to Flood Prediction.<br>
+                    Empowering disaster management teams with AI-driven early warnings.
+                </p>
+                {% if current_user.is_authenticated %}
+                <a href="{{ url_for('predict_form') }}" class="btn btn-light btn-lg px-5 shadow">
+                    <i class="bi bi-lightning-charge me-2"></i>Predict Floods
+                </a>
+                {% else %}
+                <a href="{{ url_for('register') }}" class="btn btn-light btn-lg px-5 shadow me-3">
+                    Get Started
+                </a>
+                <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-lg px-5">
+                    Login
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats -->
+<section class="mb-5">
+    <div class="container">
+        <div class="row g-4 text-center">
+            <div class="col-md-4">
+                <div class="rw-stat-card p-4">
+                    <div class="rw-stat-number" data-target="96.55">0</div>
+                    <div class="rw-stat-label">% Model Accuracy</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="rw-stat-card p-4">
+                    <div class="rw-stat-number" data-target="4">0</div>
+                    <div class="rw-stat-label">ML Algorithms Evaluated</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="rw-stat-card p-4">
+                    <div class="rw-stat-number" data-target="5">0</div>
+                    <div class="rw-stat-label">Meteorological Features</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How it works -->
+<section class="mb-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-4">How It Works</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-3 text-center">
+                <div class="rw-step-circle mx-auto mb-3">1</div>
+                <h6 class="fw-bold">Enter Weather Data</h6>
+                <p class="text-muted small">Provide temperature, humidity, rainfall, and cloud visibility readings.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="rw-step-circle mx-auto mb-3">2</div>
+                <h6 class="fw-bold">AI Analyzes Features</h6>
+                <p class="text-muted small">The XGBoost model processes scaled meteorological inputs instantly.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="rw-step-circle mx-auto mb-3">3</div>
+                <h6 class="fw-bold">Get Flood Prediction</h6>
+                <p class="text-muted small">Receive a flood risk classification with a probability score.</p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="rw-step-circle mx-auto mb-3">4</div>
+                <h6 class="fw-bold">Take Action</h6>
+                <p class="text-muted small">Issue advisories or allocate resources based on the risk level.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Scenario Cards -->
+<section class="mb-5">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-4">Real-World Use Cases</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rw-scenario-card">
+                    <div class="card-body p-4">
+                        <div class="rw-icon-badge bg-warning bg-opacity-10 text-warning mb-3">
+                            <i class="bi bi-megaphone fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold">Early Flood Warning</h5>
+                        <p class="text-muted">A meteorologist enters current rainfall and cloud visibility readings. The model predicts a high flood probability, enabling authorities to issue evacuation advisories hours in advance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rw-scenario-card">
+                    <div class="card-body p-4">
+                        <div class="rw-icon-badge bg-primary bg-opacity-10 text-primary mb-3">
+                            <i class="bi bi-truck fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold">Resource Allocation</h5>
+                        <p class="text-muted">A disaster relief coordinator monitors multiple regions during monsoon season. The system provides instant flood risk classifications to help prioritize resource deployment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm rw-scenario-card">
+                    <div class="card-body p-4">
+                        <div class="rw-icon-badge bg-success bg-opacity-10 text-success mb-3">
+                            <i class="bi bi-graph-up fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold">Model Validation</h5>
+                        <p class="text-muted">A government analyst tests the model against historical flood data. The XGBoost model achieves 96.55% accuracy, confirming the system's reliability for operational use.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+{% if not current_user.is_authenticated %}
+<section class="rw-cta-section text-white text-center py-5 mb-5">
+    <div class="container">
+        <h3 class="fw-bold mb-3">Ready to Predict Flood Risk?</h3>
+        <p class="mb-4 opacity-75">Create a free account and start generating AI-powered predictions in minutes.</p>
+        <a href="{{ url_for('register') }}" class="btn btn-light btn-lg px-5">
+            <i class="bi bi-person-plus me-2"></i>Create Account
+        </a>
+    </div>
+</section>
+{% endif %}
+{% endblock %}
